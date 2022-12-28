@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name="kivmob",
-    version="2.0",
+    name="kivmoblite",
+    version="1.0",
     description="Provides AdMob support for Kivy.",
-    url="http://github.com/MichaelStott/KivMob",
-    author="Michael Stott",
+    url="https://github.com/yunus-ceyhan/kivmoblite",
+    author="Yunus Ceyhan",
     license="MIT",
-    py_modules=["kivmob"],
-    install_requires=["kivy"],
+    py_modules=["kivmoblite"],
+    install_requires=["kivy","kvdroid"],
     zip_safe=False,
 )
