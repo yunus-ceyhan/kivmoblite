@@ -1,4 +1,4 @@
-That's a customized & lightened version of KivMob. It only supports Banner and Interstitial ads.
+That's a customized version of KivMob. It only supports Banner and Interstitial ads.
 
 Requirements `kivy, kvdroid`
 
