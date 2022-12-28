@@ -163,4 +163,4 @@ class Admob():
 
 
 if __name__ == "__main__":
-    print(" AdMob support for Kivy\n")
+    print(" AdMob support for Kivy Android\n")
