@@ -45,6 +45,7 @@ class Admob():
         MobileAds.initialize(activity.mActivity, self.ad["appId"])
 
 # Banner Ad
+
     @run_on_ui_thread
     def new_banner(self,position = None, color = None, margin = 0):
         self._adview = AdView(activity.mActivity)
