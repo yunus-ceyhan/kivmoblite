@@ -38,8 +38,9 @@ if platform == "android":
 
 
 class Admob():
-    def __init__(self, adId=test, ad_size=0):
+    def __init__(self, adId=test):
         self.ad = adId
+        self.ad_size = 0
         self._loaded = False
         self._test_devices = self.ad["testD"] if "testD" in self.ad.keys() and isinstance(self.ad["testD"], list) else []
         MobileAds.initialize(activity.mActivity, self.ad["appId"])
