@@ -42,6 +42,7 @@ class Admob():
         self.ad = adId
         self.ad_size = 0
         self._loaded = False
+        self.visiable = False
         self._test_devices = self.ad["testD"] if "testD" in self.ad.keys() and isinstance(self.ad["testD"], list) else []
         MobileAds.initialize(activity.mActivity, self.ad["appId"])
 
@@ -64,9 +65,14 @@ class Admob():
         )
         self._adview.setLayoutParams(adLayoutParams)
         layout = LinearLayout(activity.mActivity)
-        if isinstance(position,int):
+        
+        if isinstance(position, list)  or isinstance(position, tuple):
+            self._adview.setX(position[0])
+            self._adview.setY(position[1])
+        elif isinstance(position,int):
             self._adview.setY(position)
-        else:
+            self._adview.setX(0)
+        elif isinstance(position, str):
             if position == "bottom":
                 layout.setGravity(Gravity.BOTTOM)
 
@@ -86,16 +92,19 @@ class Admob():
     @run_on_ui_thread
     def show_banner(self):
         self._adview.setVisibility(View.VISIBLE)
+        self.visiable = True
         print('KivMobLite: show_banner called')
 
     @run_on_ui_thread
     def hide_banner(self):
         self._adview.setVisibility(View.GONE)
+        self.visible = False
         print('KivMobLite: hide_banner called')
 
     @run_on_ui_thread
     def destroy_banner(self):
         self._adview.destroy()
+        self.visible = False
         print('KivMobLite: destroy_banner called')
         
     @run_on_ui_thread
