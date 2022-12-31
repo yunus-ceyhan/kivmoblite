@@ -1,4 +1,6 @@
 from kivy.utils import platform
+from kivy.core.window import Window
+from kivy.metrics import dp
 from kvdroid.tools.metrics import Metrics
 screen = Metrics()
 
@@ -121,7 +123,7 @@ class Admob():
                 self._adview.setX(0)
                 self._adview.setY(0)
             else:
-                bottom = screen.height_dp() - self.ad_size
+                bottom = Window.height - dp(self.ad_size)
                 self._adview.setX(0)
                 self._adview.setY(bottom)
         self.show_banner()
